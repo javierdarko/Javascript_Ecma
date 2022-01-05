@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo DOM con Javascript</title>
+</head>
+<body>
+    <h1 id="titulo" onmouseover="rojo(this)" onmouseout="azul(this)" onmousedown="rosa(this)" onclick="verde(this)">Manejo DOM con JavaScript</h1>
+    <br>
+    
+    Nombre: <input type="text" id="nombre">
+    <br><br>
+
+    Apellido <input type="text" onfocus="trans(this)" onblur="regresa(this)">
+    <script>
+       
+        function rojo(titulo){
+            titulo.style.color= 'red';
+        }
+        function azul(titulo){
+            titulo.style.color='blue';
+        }
+        function rosa(titulo){
+            titulo.style.color='pink';
+        }
+        function verde(titulo){
+            titulo.style.color='green';
+        }
+
+
+        document.getElementById("nombre").addEventListener('focus',cambiar);
+        document.getElementById("nombre").addEventListener('blur',regresar);
+
+        function cambiar(evento){
+            let componente= event.target;
+            componente.style.background = 'yellow';
+
+        }
+        function regresar(evento){
+            evento.target.style.background='white';
+        }
+
+    </script>
+</body>
+</html>
